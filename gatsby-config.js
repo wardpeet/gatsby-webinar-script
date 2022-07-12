@@ -4,6 +4,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+/** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
@@ -38,5 +39,8 @@ module.exports = {
         icon: "src/favicon.png",
       },
     },
+  ],
+  partytownProxiedURLs: [
+    `https://www.googletagmanager.com/gtag/js?id=G-4ZNFCG40SL`,
   ],
 }
