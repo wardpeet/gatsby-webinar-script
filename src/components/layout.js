@@ -12,19 +12,16 @@ const Layout = (props) => {
       <Header />
       {props.children}
       <Footer />
+
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=G-4ZNFCG40SL`}
+        src={`https://www.googletagmanager.com/gtm.js?id=GTM-KHPM8DC`}
         strategy="off-main-thread"
-        forward={[`gtag`]}
+        forward={[`dataLayer.push`]}
       />
-      <Script id="gtag-config" strategy="off-main-thread">
-        {`
-    window.dataLayer = window.dataLayer || []
-    window.gtag = function gtag() { window.dataLayer.push(arguments) }
-    gtag('js', new Date())
-    gtag('config', "G-4ZNFCG40SL", { send_page_view: false })
-  `}
-      </Script>
+      <Script id="gtm-init" strategy="off-main-thread">{`
+window.dataLayer = window.dataLayer || []
+window.dataLayer.push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' })
+`}</Script>
     </>
   )
 }
