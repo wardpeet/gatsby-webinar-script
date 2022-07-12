@@ -10,7 +10,11 @@ export const onRouteUpdate = ({ location }, pluginOptions = {}) => {
     const pagePath = location
       ? location.pathname + location.search + location.hash
       : undefined
-    window.gtag(`event`, `page_view`, { page_path: pagePath })
+    window.dataLayer.push({
+      event: "Pageview",
+      pagePath,
+      pageTitle: document.title,
+    })
   }
 
   if (`requestAnimationFrame` in window) {
