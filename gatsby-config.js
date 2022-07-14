@@ -41,6 +41,6 @@ module.exports = {
     },
   ],
   partytownProxiedURLs: [
-    `https://www.googletagmanager.com/gtag/js?id=G-4ZNFCG40SL`,
+    `https://www.googletagmanager.com/gtm.js?id=GTM-KHPM8DC`,
   ],
 }
