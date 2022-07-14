@@ -15,10 +15,10 @@ const Layout = (props) => {
 
       <Script
         src={`https://www.googletagmanager.com/gtm.js?id=GTM-KHPM8DC`}
-        strategy="off-main-thread"
+        strategy="post-hydrate"
         forward={[`dataLayer.push`]}
       />
-      <Script id="gtm-init" strategy="off-main-thread">{`
+      <Script id="gtm-init" strategy="post-hydrate">{`
 window.dataLayer = window.dataLayer || []
 window.dataLayer.push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' })
 `}</Script>
